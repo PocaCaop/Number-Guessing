@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static java.lang.Math.abs;
+
 public class NumberGuessing {
     public static void main(String[] args) {
         //Made by Oscar
@@ -15,7 +17,8 @@ public class NumberGuessing {
                 GOOD LUCK!""");
        //Game
         do {
-            System.out.println("Guess a number from 1-10, you have " + chances + " chances left");
+            System.out.println(cpuChoice);
+            System.out.println("Guess a number from 1-10");
             correctType = scanner.hasNextInt();
             //Error Control
             if (!correctType){
@@ -29,14 +32,22 @@ public class NumberGuessing {
                 }else {
                     //Comparing cpuChoice with userChoice
                     if (cpuChoice == userChoice){ //Win
-                        System.out.println("HOORAY You guessed it the number was " + cpuChoice);
+                        System.out.println("HOORAY You guessed it! The number was " + cpuChoice);
                     }else {
                         chances--;
                         if (chances == 0){ //Lose
-                            System.out.println("You have 0 chances left! See you next time!");
+                            System.out.println("You have 0 chances left! The number was " + cpuChoice +
+                                    "\n See you next time");
                         }else {//Loses 1 chance and tries again
-                            System.out.println("AW! You missed, you have now " + chances + " chances left");
-                            correctType = false;
+                            if (abs(userChoice - cpuChoice) >= 5){
+                                System.out.println("AW! You're far away from the number! " + chances + " left");
+                                correctType = false;
+                            }else {
+                                System.out.println("AW! You're close from the number, you can do this! "
+                                        + chances + " left");
+                                correctType = false;
+                            }
+
                         }
                     }
                 }
