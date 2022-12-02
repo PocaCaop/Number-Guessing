@@ -39,6 +39,7 @@ public class NumberGuessing {
                             System.out.println("You have 0 chances left! The number was " + cpuChoice +
                                     "\n See you next time");
                         }else {//Loses 1 chance and tries again
+                            //Checks if the userChoice is 5 numbers away from the cpuChoice or not
                             if (abs(userChoice - cpuChoice) >= 5){
                                 System.out.println("AW! You're far away from the number! " + chances + " left");
                                 correctType = false;
@@ -55,3 +56,5 @@ public class NumberGuessing {
         }while (!correctType);
     }
 }
+
+//Made by Oscar
