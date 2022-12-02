@@ -9,8 +9,10 @@ public class NumberGuessing {
         int chances = 3;
         boolean correctType = false;
 
-        System.out.println("Hello and welcome to the number guessing game!\n You have 3 chances to guess the number, " +
-                "if you guess it you win, if you don't you lose!\n GOOD LUCK!");
+        System.out.println("""
+                Hello and welcome to the number guessing game!
+                You have 3 chances to guess the number, if you guess it you win, if you don't you lose!
+                GOOD LUCK!""");
        //Game
         do {
             System.out.println("Guess a number from 1-10, you have " + chances + " chances left");
